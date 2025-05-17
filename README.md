@@ -1,51 +1,48 @@
 # Patient Tracker
 
-This repository contains a minimal prototype of a cross-platform mobile application for tracking patients by hospital and floor. It is intended for use on both iOS and Android devices.
+A minimal cross-platform (iOS + Android) React-Native prototype for tracking patients by hospital and floor.  
+All data are stored locally in SQLite; full audit triggers record every insert, update, and delete.
+
+---
 
 ## Database Schema
 
-The SQL schema in `patient_tracking_schema.sql` defines the tables for hospitals, floors, physicians, patients, and attachments. It also includes an `audit_log` table with triggers that record inserts, updates, and deletes for these tables.
+`patient_tracking_schema.sql` defines:
 
-To initialize the database, load the contents of `patient_tracking_schema.sql` into a local SQLite database. The React Native app uses this schema when first run.
+- **Hospitals**
+- **Floors**
+- **Physicians**
+- **Patients**
+- **Attachments**
+- **Audit Log** – triggers on the tables above
 
-## Building the React Native App
+Load that file into a fresh SQLite DB (the app will auto-initialise it on first run).
 
-### Prerequisites
+---
 
-- Node.js and npm
-- React Native CLI (`npm install -g react-native-cli`)
-- Xcode with command-line tools (macOS for iOS builds)
-- Android Studio (for Android builds)
+## App Features
 
-### Installation
+| Screen | What it does |
+|--------|--------------|
+| **Hospital List** | Filter hospitals by name, see patient counts, dive into their patient lists |
+| **Add Hospital** | Create a hospital with notes and any number of floors |
+| **Patient List** | View / filter patients for a hospital (unchecked-in patients show in grey) |
+| **Add Patient** | Add a patient and assign hospital + floor |
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) & npm  
+- React Native CLI `npm i -g react-native-cli`  
+- **macOS (iOS builds)** – Xcode + Command-line Tools  
+- **Android** – Android Studio (any OS)
+
+---
+
+## Installation
 
 ```bash
+git clone <repo-url>
 cd PatientTracker
 npm install
-```
-
-### Running on iOS (macOS only)
-
-```bash
-npx react-native run-ios
-```
-
-### Running on Android
-
-Open an emulator or connect a device and run:
-
-```bash
-npx react-native run-android
-```
-
-### Testing
-
-This prototype includes a small Jest test to ensure the main app renders. Run tests with:
-
-```bash
-npm test
-```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
