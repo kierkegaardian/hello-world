@@ -1,46 +1,48 @@
-# hello-world
-Repository Practice
+# Patient Tracker
 
-## Patient Tracking Database Schema
-See `patient_tracking_schema.sql` for an example SQL schema to manage hospitals, floors, physicians, patients, and attachments.
+A minimal cross-platform (iOS + Android) React-Native prototype for tracking patients by hospital and floor.  
+All data live in a local SQLite database; audit triggers log every insert, update, and delete.
 
-## React Native Prototype
+---
 
-This repository contains a minimal React Native app in the `PatientTracker` folder. It demonstrates a simple patient tracking system with four screens:
+## Database Schema
 
-1. **Hospital List** – Filter hospitals by name, view patient counts, and navigate to patient lists.
-2. **Add Hospital** – Create hospitals with notes and a configurable number of floors.
-3. **Patient List** – View and filter patients for a hospital. Patients not checked in appear in gray.
-4. **Add Patient** – Add new patients and assign them to a hospital and floor.
+`patient_tracking_schema.sql` defines:
 
-The app stores data in a local SQLite database and includes audit triggers defined in `patient_tracking_schema.sql`.
+- **Hospitals**
+- **Floors**
+- **Physicians**
+- **Patients**
+- **Attachments**
+- **Audit Log** – triggers on every table above
 
-### Prerequisites
+Load that file into a fresh SQLite DB (the app will initialise it automatically on first run).
 
-- [Node.js](https://nodejs.org/) and npm
-- [React Native CLI](https://reactnative.dev/docs/environment-setup)
-- Xcode (for iOS builds on macOS) and Android Studio (for Android)
+---
 
-### Running on macOS (iOS)
+## App Features
+
+| Screen | Purpose |
+|--------|---------|
+| **Hospital List** | Filter hospitals by name, view patient counts, jump to patient lists |
+| **Add Hospital** | Create a hospital with notes and any number of floors |
+| **Patient List** | View / filter patients for a hospital (unchecked-in patients appear in grey) |
+| **Add Patient**  | Add a patient and assign hospital + floor |
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) & npm  
+- React-Native CLI `npm i -g react-native-cli`  
+- **macOS (iOS builds)** – Xcode + Command-line Tools  
+- **Android** – Android Studio (any OS)
+
+---
+
+## Installation
 
 ```bash
+git clone <repo-url>
 cd PatientTracker
-npm install
-npx react-native run-ios
-```
-
-### Running on Linux or macOS (Android)
-
-```bash
-cd PatientTracker
-npm install
-npx react-native run-android
-```
-
-### Tests
-
-The project includes a basic Jest configuration. Run tests with:
-
-```bash
-npm test
-```
+npm install          # or: yarn
