@@ -1,18 +1,16 @@
--- Sample SQL schema for patient-tracking application
+-- Sample SQL schema for patient‑tracking application
 -----------------------------------------------------
 
--- =========================
--- Core entity tables
--- =========================
+-- ============
+-- Core tables
+-- ============
 
--- Table: hospitals
 CREATE TABLE hospitals (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     name        TEXT NOT NULL,
     location    TEXT
 );
 
--- Table: floors
 CREATE TABLE floors (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     hospital_id INTEGER NOT NULL,
@@ -21,14 +19,12 @@ CREATE TABLE floors (
     FOREIGN KEY (hospital_id) REFERENCES hospitals(id)
 );
 
--- Table: physicians
 CREATE TABLE physicians (
     id        INTEGER PRIMARY KEY AUTOINCREMENT,
     name      TEXT NOT NULL,
     specialty TEXT
 );
 
--- Table: patients
 CREATE TABLE patients (
     id                     INTEGER PRIMARY KEY AUTOINCREMENT,
     name                   TEXT NOT NULL,
@@ -43,7 +39,6 @@ CREATE TABLE patients (
     FOREIGN KEY (attending_physician_id) REFERENCES physicians(id)
 );
 
--- Table: attachments
 CREATE TABLE attachments (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     patient_id  INTEGER NOT NULL,
@@ -53,27 +48,32 @@ CREATE TABLE attachments (
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
--- =========================
--- Helpful indices
--- =========================
+-- ============
+-- Indices
+-- ============
+
 CREATE INDEX idx_patients_hospital  ON patients(hospital_id);
 CREATE INDEX idx_patients_floor     ON patients(floor_id);
 CREATE INDEX idx_patients_physician ON patients(attending_physician_id);
 
--- =========================
--- Audit log + triggers
--- =========================
+-- ============
+-- Audit log
+-- ============
 
 CREATE TABLE audit_log (
-    id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    table_name  TEXT NOT NULL,
-    operation   TEXT NOT NULL,          -- INSERT / UPDATE / DELETE
-    row_id      INTEGER,                -- PK of the affected row
-    changed_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
-    changed_data TEXT                   -- JSON payload of NEW values (if applicable)
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    table_name   TEXT NOT NULL,
+    operation    TEXT NOT NULL,          -- INSERT / UPDATE / DELETE
+    row_id       INTEGER,
+    changed_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
+    changed_data TEXT                    -- JSON snapshot of NEW values
 );
 
--- ----- Hospitals
+-- ============ 
+-- Triggers
+-- ============
+
+-- ----- hospitals
 CREATE TRIGGER trg_hospitals_ai AFTER INSERT ON hospitals
 BEGIN
     INSERT INTO audit_log(table_name, operation, row_id, changed_data)
@@ -94,7 +94,7 @@ BEGIN
     VALUES ('hospitals', 'DELETE', OLD.id);
 END;
 
--- ----- Floors
+-- ----- floors
 CREATE TRIGGER trg_floors_ai AFTER INSERT ON floors
 BEGIN
     INSERT INTO audit_log(table_name, operation, row_id, changed_data)
@@ -119,7 +119,7 @@ BEGIN
     VALUES ('floors', 'DELETE', OLD.id);
 END;
 
--- ----- Physicians
+-- ----- physicians
 CREATE TRIGGER trg_physicians_ai AFTER INSERT ON physicians
 BEGIN
     INSERT INTO audit_log(table_name, operation, row_id, changed_data)
@@ -129,3 +129,65 @@ END;
 
 CREATE TRIGGER trg_physicians_au AFTER UPDATE ON physicians
 BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id, changed_data)
+    VALUES ('physicians', 'UPDATE', NEW.id,
+            json_object('name', NEW.name, 'specialty', NEW.specialty));
+END;
+
+CREATE TRIGGER trg_physicians_ad AFTER DELETE ON physicians
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id)
+    VALUES ('physicians', 'DELETE', OLD.id);
+END;
+
+-- ----- patients
+CREATE TRIGGER trg_patients_ai AFTER INSERT ON patients
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id, changed_data)
+    VALUES ('patients', 'INSERT', NEW.id,
+            json_object('name', NEW.name,
+                        'hospital_id', NEW.hospital_id,
+                        'floor_id', NEW.floor_id,
+                        'attending_physician_id', NEW.attending_physician_id));
+END;
+
+CREATE TRIGGER trg_patients_au AFTER UPDATE ON patients
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id, changed_data)
+    VALUES ('patients', 'UPDATE', NEW.id,
+            json_object('name', NEW.name,
+                        'hospital_id', NEW.hospital_id,
+                        'floor_id', NEW.floor_id,
+                        'attending_physician_id', NEW.attending_physician_id));
+END;
+
+CREATE TRIGGER trg_patients_ad AFTER DELETE ON patients
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id)
+    VALUES ('patients', 'DELETE', OLD.id);
+END;
+
+-- ----- attachments
+CREATE TRIGGER trg_attachments_ai AFTER INSERT ON attachments
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id, changed_data)
+    VALUES ('attachments', 'INSERT', NEW.id,
+            json_object('patient_id', NEW.patient_id,
+                        'file_path', NEW.file_path,
+                        'description', NEW.description));
+END;
+
+CREATE TRIGGER trg_attachments_au AFTER UPDATE ON attachments
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id, changed_data)
+    VALUES ('attachments', 'UPDATE', NEW.id,
+            json_object('patient_id', NEW.patient_id,
+                        'file_path', NEW.file_path,
+                        'description', NEW.description));
+END;
+
+CREATE TRIGGER trg_attachments_ad AFTER DELETE ON attachments
+BEGIN
+    INSERT INTO audit_log(table_name, operation, row_id)
+    VALUES ('attachments', 'DELETE', OLD.id);
+END;
