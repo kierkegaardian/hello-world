@@ -7,7 +7,7 @@ All data live in a local SQLite database; audit triggers log every insert, updat
 
 ## Database Schema
 
-`patient_tracking_schema.sql` defines:
+The SQL schema `patient_tracking_schema.sql` defines:
 
 - **Hospitals**
 - **Floors**
@@ -16,33 +16,13 @@ All data live in a local SQLite database; audit triggers log every insert, updat
 - **Attachments**
 - **Audit Log** – triggers on every table above
 
-Load that file into a fresh SQLite DB (the app will initialise it automatically on first run).
+### Database Initialization
 
----
+You can load the schema using a database engine of your choice. SQLite is ideal for development, while PostgreSQL is suitable for production deployments.
 
-## App Features
+#### Using SQLite
 
-| Screen | Purpose |
-|--------|---------|
-| **Hospital List** | Filter hospitals by name, view patient counts, jump to patient lists |
-| **Add Hospital** | Create a hospital with notes and any number of floors |
-| **Patient List** | View / filter patients for a hospital (unchecked-in patients appear in grey) |
-| **Add Patient**  | Add a patient and assign hospital + floor |
-
----
-
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) & npm  
-- React-Native CLI `npm i -g react-native-cli`  
-- **macOS (iOS builds)** – Xcode + Command-line Tools  
-- **Android** – Android Studio (any OS)
-
----
-
-## Installation
+Run this command to create a local database and initialize the schema:
 
 ```bash
-git clone <repo-url>
-cd PatientTracker
-npm install          # or: yarn
+sqlite3 patient_tracking.db < patient_tracking_schema.sql
