@@ -1,24 +1,28 @@
-# hello-world
-Respository Practice
+# Patient Tracker
 
-## Database Initialization
+A minimal cross-platform (iOS + Android) React-Native prototype for tracking patients by hospital and floor.  
+All data live in a local SQLite database; audit triggers log every insert, update, and delete.
 
-The SQL schema `patient_tracking_schema.sql` sets up the tables required for the project. You can apply this schema using a database engine of your choice. SQLite is a quick option for development, while PostgreSQL is recommended for production environments.
+---
 
-### Using SQLite
+## Database Schema
 
-Run the following command to create a local database file and load the schema:
+The SQL schema `patient_tracking_schema.sql` defines:
+
+- **Hospitals**
+- **Floors**
+- **Physicians**
+- **Patients**
+- **Attachments**
+- **Audit Log** – triggers on every table above
+
+### Database Initialization
+
+You can load the schema using a database engine of your choice. SQLite is ideal for development, while PostgreSQL is suitable for production deployments.
+
+#### Using SQLite
+
+Run this command to create a local database and initialize the schema:
 
 ```bash
 sqlite3 patient_tracking.db < patient_tracking_schema.sql
-```
-
-### Using PostgreSQL
-
-If you prefer PostgreSQL, execute the SQL file against your database with:
-
-```bash
-psql -d <database_name> -f patient_tracking_schema.sql
-```
-
-Replace `<database_name>` with your target database name.
