@@ -4,6 +4,7 @@ import App from '../App';
 
 describe('App', () => {
   it('renders without crashing', () => {
-    renderer.create(<App />);
+    const tree = renderer.create(<App />);
+    tree.unmount();
   });
 });
