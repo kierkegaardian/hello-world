@@ -1,15 +1,48 @@
-# hello-world
-Respository Practice
+# Patient Tracker
 
-## Patient Tracking Database Schema
-See `patient_tracking_schema.sql` for an example SQL schema to manage hospitals, floors, physicians, patients, and attachments.
+A minimal cross-platform (iOS + Android) React-Native prototype for tracking patients by hospital and floor.  
+All data live in a local SQLite database; audit triggers log every insert, update, and delete.
 
-## Patient Tracking Mobile App
-A minimal React Native skeleton (`patient_tracking_app` directory) demonstrates a simple four-screen UI:
+---
 
-1. **Hospital/Floor View** – Hierarchical view of hospitals and floors with patient counts.
-2. **Add Hospital** – Form to create a new hospital with address, floors, and notes.
-3. **Patient View** – List of patients with search and checked-in status display.
-4. **Add Patient** – Form to add a patient and optionally create a new hospital.
+## Database Schema
 
-This code uses Expo and React Navigation to manage screens. It contains placeholder logic and in-memory sample data for demonstration.
+`patient_tracking_schema.sql` defines:
+
+- **Hospitals**
+- **Floors**
+- **Physicians**
+- **Patients**
+- **Attachments**
+- **Audit Log** – triggers on every table above
+
+Load that file into a fresh SQLite DB (the app will initialise it automatically on first run).
+
+---
+
+## App Features
+
+| Screen | Purpose |
+|--------|---------|
+| **Hospital List** | Filter hospitals by name, view patient counts, jump to patient lists |
+| **Add Hospital** | Create a hospital with notes and any number of floors |
+| **Patient List** | View / filter patients for a hospital (unchecked-in patients appear in grey) |
+| **Add Patient**  | Add a patient and assign hospital + floor |
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) & npm  
+- React-Native CLI `npm i -g react-native-cli`  
+- **macOS (iOS builds)** – Xcode + Command-line Tools  
+- **Android** – Android Studio (any OS)
+
+---
+
+## Installation
+
+```bash
+git clone <repo-url>
+cd PatientTracker
+npm install          # or: yarn
