@@ -43,3 +43,15 @@ The repository does not include the generated iOS project files. To run the Reac
    ```bash
    npx react-native run-ios
    ```
+
+### patient_tracking_app (Expo Demo)
+
+The `patient_tracking_app` folder contains a simplified React Native project configured for Expo. It ships with sample data and is meant for quickly exploring the patient tracking concept without generating native builds.
+
+To install dependencies and launch the demo:
+
+```bash
+cd patient_tracking_app
+npm install
+npx expo start
+```
