@@ -41,8 +41,13 @@ The repository does not include the generated iOS project files. To run the Reac
    ```
 3. Open `PatientTracker.xcworkspace` in Xcode and build the app or run:
    ```bash
-   npx react-native run-ios
-   ```
+  npx react-native run-ios
+  ```
+
+4. React Native `0.73` renamed the Hermes helper script to
+   `replace_hermes_version.js`. If your build configuration or Podspec
+   still references `replaceHermesVersion.js`, update the path to
+   `node_modules/react-native/sdks/hermes-engine/utils/replace_hermes_version.js`.
 
 ### Running the Metro bundler
 
