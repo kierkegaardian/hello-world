@@ -25,4 +25,5 @@ You can load the schema using a database engine of your choice. SQLite is ideal 
 Run this command to create a local database and initialize the schema:
 
 ```bash
-sqlite3 patient_tracking.db < patient_tracking_schema.sql
+sqlite3 patient.db < patient_tracking_schema.sql
+```
