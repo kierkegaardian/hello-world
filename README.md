@@ -33,12 +33,12 @@ sqlite3 patient_tracking.db < patient_tracking_schema.sql
 The repository does not include the generated iOS project files. To run the React Native app on a Mac:
 
 1. Ensure Xcode and CocoaPods are installed.
-2. From the `PatientTracker` directory, generate the iOS project and install pods:
+2. From the `PatientTracker` directory, initialize the native projects if the `ios` and `android` folders are absent:
    ```bash
-   npx react-native init ios --directory ios --skip-install
-   cd ios
-   pod install
+   npx react-native init PatientTracker
+   cd ios && pod install
    ```
+   The `init` command creates the native iOS project inside `PatientTracker/ios`.
 3. Open `PatientTracker.xcworkspace` in Xcode and build the app or run:
    ```bash
   npx react-native run-ios
