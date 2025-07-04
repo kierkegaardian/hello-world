@@ -26,7 +26,6 @@ Run this command to create a local database and initialize the schema:
 
 ```bash
 sqlite3 patient_tracking.db < patient_tracking_schema.sql
-```
 
 ### Running on iOS
 
@@ -43,3 +42,4 @@ The repository does not include the generated iOS project files. To run the Reac
    ```bash
    npx react-native run-ios
    ```
+
