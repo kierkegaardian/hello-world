@@ -26,7 +26,6 @@ Run this command to create a local database and initialize the schema:
 
 ```bash
 sqlite3 patient_tracking.db < patient_tracking_schema.sql
-```
 
 ### Running on iOS
 
@@ -44,6 +43,7 @@ The repository does not include the generated iOS project files. To run the Reac
    npx react-native run-ios
    ```
 
+
 ### patient_tracking_app (Expo Demo)
 
 The `patient_tracking_app` folder contains a simplified React Native project configured for Expo. It ships with sample data and is meant for quickly exploring the patient tracking concept without generating native builds.
@@ -55,3 +55,5 @@ cd patient_tracking_app
 npm install
 npx expo start
 ```
+
+
