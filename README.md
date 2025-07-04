@@ -43,6 +43,17 @@ The repository does not include the generated iOS project files. To run the Reac
    npx react-native run-ios
    ```
 
+### Running the Metro bundler
+
+The `PatientTracker` directory now includes a minimal `metro.config.js`. After
+installing dependencies, you can start the React Native development server with:
+
+```bash
+cd PatientTracker
+npm install
+npm start
+```
+
 
 ### patient_tracking_app (Expo Demo)
 
