@@ -55,6 +55,9 @@ npm install
 npm start
 ```
 
+This project was tested with **Node 18** and **Node 20**. Use a Node version in
+this range when running the commands above.
+
 
 ### patient_tracking_app (Expo Demo)
 
