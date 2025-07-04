@@ -13,7 +13,8 @@
     "@react-navigation/native-stack": "^6.9.12",
     "react": "18.2.0",
     "react-native": "0.72.4",
-    "react-native-sqlite-storage": "^6.0.1"
+    "react-native-sqlite-storage": "^6.0.1",
+    "@react-native-picker/picker": "^2.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
