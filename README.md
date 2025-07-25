@@ -35,7 +35,7 @@ The repository does not include the generated iOS project files. To run the Reac
 1. Ensure Xcode and CocoaPods are installed.
 2. From the `PatientTracker` directory, initialize the native projects if the `ios` and `android` folders are absent:
    ```bash
-   npx react-native init PatientTracker
+   npx react-native init PatientTracker --directory .
    cd ios && pod install
    ```
    The `init` command creates the native iOS project inside `PatientTracker/ios`.
