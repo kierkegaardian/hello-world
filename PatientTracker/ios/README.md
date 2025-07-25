@@ -6,8 +6,8 @@ To generate the actual Xcode project, run the following commands on your Mac:
 
 ```bash
 cd PatientTracker
-npx react-native init PatientTracker
-cd ios && pod install
+ npx react-native init PatientTracker --directory .
+ cd ios && pod install
 ```
 
 After generating the project, open `PatientTracker.xcworkspace` in Xcode and build the app.
