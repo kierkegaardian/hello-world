@@ -1,30 +1,27 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Alert, ScrollView, Text } from 'react-native';
-import { openDatabase } from 'react-native-sqlite-storage';
-
-const db = openDatabase({ name: 'patient.db', location: 'default' });
+import { View, TextInput, Button, Alert, ScrollView } from 'react-native';
+import db from '../db';
 
 export default function AddHospitalScreen({ navigation, route }) {
   const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [notes, setNotes] = useState('');
+  const [location, setLocation] = useState('');
   const [numFloors, setNumFloors] = useState('0');
-  const [floorNotes, setFloorNotes] = useState({});
+  const [floorDescriptions, setFloorDescriptions] = useState({});
 
   const addHospital = () => {
     if (!name) return Alert.alert('Hospital name required');
     db.transaction(tx => {
       tx.executeSql(
-        'INSERT INTO hospitals (name, address, notes) VALUES (?, ?, ?);',
-        [name, address, notes],
+        'INSERT INTO hospitals (name, location) VALUES (?, ?);',
+        [name, location],
         (_, result) => {
           const hospitalId = result.insertId;
           const floorCount = parseInt(numFloors, 10) || 0;
           for (let i = 1; i <= floorCount; i++) {
-            const note = floorNotes[i] || '';
+            const desc = floorDescriptions[i] || '';
             tx.executeSql(
-              'INSERT INTO floors (hospital_id, floor_number, notes) VALUES (?, ?, ?);',
-              [hospitalId, i, note]
+              'INSERT INTO floors (hospital_id, floor_number, description) VALUES (?, ?, ?);',
+              [hospitalId, i, desc]
             );
           }
         }
@@ -38,8 +35,7 @@ export default function AddHospitalScreen({ navigation, route }) {
   return (
     <ScrollView style={{ flex: 1, padding: 16 }}>
       <TextInput placeholder="Name" value={name} onChangeText={setName} />
-      <TextInput placeholder="Address" value={address} onChangeText={setAddress} />
-      <TextInput placeholder="Notes" value={notes} onChangeText={setNotes} multiline />
+      <TextInput placeholder="Location" value={location} onChangeText={setLocation} />
       <TextInput
         placeholder="Number of floors"
         value={numFloors}
@@ -49,9 +45,9 @@ export default function AddHospitalScreen({ navigation, route }) {
       {Array.from({ length: parseInt(numFloors, 10) || 0 }).map((_, index) => (
         <TextInput
           key={index}
-          placeholder={`Floor ${index + 1} notes`}
-          value={floorNotes[index + 1] || ''}
-          onChangeText={text => setFloorNotes({ ...floorNotes, [index + 1]: text })}
+          placeholder={`Floor ${index + 1} description`}
+          value={floorDescriptions[index + 1] || ''}
+          onChangeText={text => setFloorDescriptions({ ...floorDescriptions, [index + 1]: text })}
           multiline
         />
       ))}

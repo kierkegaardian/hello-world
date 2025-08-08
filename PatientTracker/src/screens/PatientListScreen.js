@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity } from 'react-native';
-import { openDatabase } from 'react-native-sqlite-storage';
-
-const db = openDatabase({ name: 'patient.db', location: 'default' });
+import db from '../db';
 
 export default function PatientListScreen({ navigation, route }) {
   const { hospital } = route.params;
@@ -16,8 +14,8 @@ export default function PatientListScreen({ navigation, route }) {
   const loadPatients = () => {
     db.transaction(tx => {
       tx.executeSql(
-        'SELECT p.id, p.name, p.medical_issue, p.checked_in, f.floor_number FROM patients p LEFT JOIN floors f ON p.floor_id = f.id WHERE p.hospital_id = ? AND p.name LIKE ?;',
-        [hospital.id, `%${filter}%`],
+          'SELECT p.id, p.name, p.medical_issue, f.floor_number FROM patients p LEFT JOIN floors f ON p.floor_id = f.id WHERE p.hospital_id = ? AND p.name LIKE ?;',
+          [hospital.id, `%${filter}%`],
         (_, { rows }) => {
           const data = [];
           for (let i = 0; i < rows.length; i++) {
@@ -41,7 +39,7 @@ export default function PatientListScreen({ navigation, route }) {
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <View style={{ paddingVertical: 4 }}>
-            <Text style={{ color: item.checked_in ? 'black' : 'gray' }}>
+            <Text>
               {item.name} - Floor {item.floor_number || '-'}
             </Text>
           </View>
