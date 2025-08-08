@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HospitalListScreen from './screens/HospitalListScreen';
 import AddHospitalScreen from './screens/AddHospitalScreen';
 import PatientListScreen from './screens/PatientListScreen';
 import AddPatientScreen from './screens/AddPatientScreen';
+import { initializeDatabase } from './db';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  useEffect(() => {
+    initializeDatabase();
+  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator>
