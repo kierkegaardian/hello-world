@@ -1422,3 +1422,64 @@ To clear this warning, run:
   18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
   19 |       const where = [];
   20 |       const params = [];
+ INFO  Connection closed to device='iPhone 16 Pro' for app='org.reactjs.native.example.PatientTracker' with code='1006' and reason=''.
+ BUNDLE  ./index.js 
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ INFO  Launching DevTools...
+ INFO  Connection closed to device='iPhone 16 Pro' for app='org.reactjs.native.example.PatientTracker' with code='1006' and reason=''.
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ INFO  Connection closed to device='iPhone 16 Pro' for app='org.reactjs.native.example.PatientTracker' with code='1006' and reason=''.
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ INFO  Connection closed to device='iPhone 16 Pro' for app='org.reactjs.native.example.PatientTracker' with code='1006' and reason=''.
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ BUNDLE  ./index.js 
+ INFO  Connection closed to device='iPhone 16 Pro' for app='org.reactjs.native.example.PatientTracker' with code='1006' and reason=''.
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ INFO  Connection closed to device='iPhone 16 Pro' for app='org.reactjs.native.example.PatientTracker' with code='1006' and reason=''.
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 

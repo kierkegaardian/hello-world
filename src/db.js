@@ -124,4 +124,84 @@ END;`);
   });
 };
 
+export const seedSampleData = () => {
+  // Insert sample data only if there are no hospitals yet
+  db.transaction(tx => {
+    tx.executeSql(
+      'SELECT COUNT(*) as cnt FROM hospitals;',
+      [],
+      (_, rs) => {
+        const cnt = rs.rows.item(0).cnt;
+        if (cnt > 0) return; // already seeded/has data
+
+        // Seed two hospitals
+        tx.executeSql(
+          'INSERT INTO hospitals (name, location) VALUES (?, ?);',
+          ['General Hospital', 'Downtown'],
+          (_, res1) => {
+            const h1 = res1.insertId;
+            // Floors for hospital 1
+            tx.executeSql('INSERT INTO floors (hospital_id, floor_number, description) VALUES (?, ?, ?);', [h1, 1, 'ER / Admissions']);
+            tx.executeSql('INSERT INTO floors (hospital_id, floor_number, description) VALUES (?, ?, ?);', [h1, 2, 'Surgery']);
+            tx.executeSql('INSERT INTO floors (hospital_id, floor_number, description) VALUES (?, ?, ?);', [h1, 3, 'Recovery']);
+
+            // Example patients for hospital 1
+            tx.executeSql(
+              'INSERT INTO patients (name, birthdate, medical_issue, hospital_id, floor_id, notes) VALUES (?, ?, ?, ?, ?, ?);',
+              ['Alice Carter', '1988-05-12', 'Appendicitis', h1, null, 'NPO after midnight']
+            );
+            tx.executeSql(
+              'INSERT INTO patients (name, birthdate, medical_issue, hospital_id, floor_id, notes, retired) VALUES (?, ?, ?, ?, ?, ?, ?);',
+              ['Bob Nguyen', '1975-11-03', 'Knee Surgery', h1, null, 'PT scheduled', 1]
+            );
+          }
+        );
+
+        tx.executeSql(
+          'INSERT INTO hospitals (name, location) VALUES (?, ?);',
+          ['City Clinic', 'Uptown'],
+          (_, res2) => {
+            const h2 = res2.insertId;
+            // Floors for hospital 2
+            tx.executeSql('INSERT INTO floors (hospital_id, floor_number, description) VALUES (?, ?, ?);', [h2, 1, 'Check-in / Radiology']);
+            tx.executeSql('INSERT INTO floors (hospital_id, floor_number, description) VALUES (?, ?, ?);', [h2, 2, 'Outpatient']);
+
+            // Example patient for hospital 2
+            tx.executeSql(
+              'INSERT INTO patients (name, birthdate, medical_issue, hospital_id, floor_id, notes) VALUES (?, ?, ?, ?, ?, ?);',
+              ['Chloe Patel', '1992-09-21', 'Pneumonia', h2, null, 'Antibiotics day 2']
+            );
+          }
+        );
+      }
+    );
+  });
+};
+
+export const resetDatabase = () => {
+  return new Promise(resolve => {
+    db.transaction(
+      tx => {
+        tx.executeSql('DROP TABLE IF EXISTS attachments;');
+        tx.executeSql('DROP TABLE IF EXISTS patients;');
+        tx.executeSql('DROP TABLE IF EXISTS floors;');
+        tx.executeSql('DROP TABLE IF EXISTS physicians;');
+        tx.executeSql('DROP TABLE IF EXISTS audit_log;');
+        tx.executeSql('DROP TABLE IF EXISTS hospitals;');
+      },
+      () => {
+        // On error dropping tables, still try to re-init
+        initializeDatabase();
+        seedSampleData();
+        resolve();
+      },
+      () => {
+        initializeDatabase();
+        seedSampleData();
+        resolve();
+      }
+    );
+  });
+};
+
 export default db;

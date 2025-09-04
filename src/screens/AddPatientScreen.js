@@ -4,45 +4,116 @@ import { Picker } from '@react-native-picker/picker';
 import db from '../db';
 
 export default function AddPatientScreen({ navigation, route }) {
-  const { hospital } = route.params;
+  const hospitalParam = route.params?.hospital || null;
+  const patientId = route.params?.patientId || null;
   const [name, setName] = useState('');
   const [birthdate, setBirthdate] = useState('');
   const [medicalIssue, setMedicalIssue] = useState('');
   const [notes, setNotes] = useState('');
   const [floorId, setFloorId] = useState(null);
+  const [hospitalId, setHospitalId] = useState(hospitalParam?.id || null);
+  const [hospitalName, setHospitalName] = useState(hospitalParam?.name || '');
   const [floors, setFloors] = useState([]);
+  const [hospitals, setHospitals] = useState([]);
 
   useEffect(() => {
-  db.transaction(tx => {
-    tx.executeSql(
-      'SELECT id, floor_number FROM floors WHERE hospital_id = ?;',
-      [hospital.id],
-      (_, { rows }) => {
-        const data = [];
-        for (let i = 0; i < rows.length; i++) data.push(rows.item(i));
-        setFloors(data);
-      }
-    );
-  });
-  }, []);
+    if (hospitalId) {
+      db.transaction(tx => {
+        tx.executeSql(
+          'SELECT id, floor_number FROM floors WHERE hospital_id = ? ORDER BY floor_number ASC;',
+          [hospitalId],
+          (_, { rows }) => {
+            const data = [];
+            for (let i = 0; i < rows.length; i++) data.push(rows.item(i));
+            setFloors(data);
+          }
+        );
+      });
+    } else {
+      setFloors([]);
+    }
+  }, [hospitalId]);
 
-  const addPatient = () => {
-    if (!name) return Alert.alert('Name required');
+  useEffect(() => {
+    if (!patientId) return;
     db.transaction(tx => {
       tx.executeSql(
-        'INSERT INTO patients (name, birthdate, medical_issue, hospital_id, floor_id, attending_physician_id, notes) VALUES (?, ?, ?, ?, ?, ?, ?);',
-        [name, birthdate, medicalIssue, hospital.id, floorId, null, notes],
-        () => {
-          route.params?.reload && route.params.reload();
-          navigation.goBack();
+        'SELECT p.*, h.name AS hospital_name FROM patients p LEFT JOIN hospitals h ON h.id = p.hospital_id WHERE p.id = ?;',
+        [patientId],
+        (_, { rows }) => {
+          if (rows.length) {
+            const r = rows.item(0);
+            setName(r.name || '');
+            setBirthdate(r.birthdate || '');
+            setMedicalIssue(r.medical_issue || '');
+            setNotes(r.notes || '');
+            setHospitalId(r.hospital_id || null);
+            setHospitalName(r.hospital_name || '');
+            setFloorId(r.floor_id || null);
+          }
         }
       );
+    });
+  }, [patientId]);
+
+  useEffect(() => {
+    // Load list of hospitals for selection
+    db.transaction(tx => {
+      tx.executeSql(
+        'SELECT id, name FROM hospitals ORDER BY name ASC;',
+        [],
+        (_, { rows }) => {
+          const data = [];
+          for (let i = 0; i < rows.length; i++) data.push(rows.item(i));
+          setHospitals(data);
+          if (hospitalId) {
+            const found = data.find(h => h.id === hospitalId);
+            if (found) setHospitalName(found.name);
+          }
+        }
+      );
+    });
+  }, [hospitalId]);
+
+  const savePatient = () => {
+    if (!name) return Alert.alert('Name required');
+    if (!hospitalId) return Alert.alert('Please select a hospital');
+    db.transaction(tx => {
+      if (patientId) {
+        tx.executeSql(
+          'UPDATE patients SET name=?, birthdate=?, medical_issue=?, hospital_id=?, floor_id=?, notes=? WHERE id=?;',
+          [name, birthdate, medicalIssue, hospitalId, floorId, notes, patientId],
+          () => {
+            route.params?.reload && route.params.reload();
+            navigation.goBack();
+          }
+        );
+      } else {
+        tx.executeSql(
+          'INSERT INTO patients (name, birthdate, medical_issue, hospital_id, floor_id, attending_physician_id, notes) VALUES (?, ?, ?, ?, ?, ?, ?);',
+          [name, birthdate, medicalIssue, hospitalId, floorId, null, notes],
+          () => {
+            route.params?.reload && route.params.reload();
+            navigation.goBack();
+          }
+        );
+      }
     });
   };
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
-      <Text>Hospital: {hospital.name}</Text>
+      <Text>Hospital: {hospitalName || '(select below)'}</Text>
+      <Picker selectedValue={hospitalId} onValueChange={v => setHospitalId(v)}>
+        <Picker.Item label={hospitalName || 'Select Hospital'} value={hospitalId} />
+        {hospitals
+          .filter(h => h.id !== hospitalId)
+          .map(h => (
+            <Picker.Item key={h.id} label={h.name} value={h.id} />
+          ))}
+      </Picker>
+      {/* Minimal hospital picker population */}
+      <View style={{ height: 0 }} />
       <TextInput placeholder="Name" value={name} onChangeText={setName} />
       <TextInput placeholder="Birthdate" value={birthdate} onChangeText={setBirthdate} />
       <TextInput placeholder="Medical Issue" value={medicalIssue} onChangeText={setMedicalIssue} />
@@ -53,7 +124,7 @@ export default function AddPatientScreen({ navigation, route }) {
           <Picker.Item key={f.id} label={`Floor ${f.floor_number}`} value={f.id} />
         ))}
       </Picker>
-      <Button title="Save" onPress={addPatient} />
+      <Button title="Save" onPress={savePatient} />
     </View>
   );
 }
