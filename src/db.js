@@ -1,14 +1,17 @@
 import { openDatabase } from 'react-native-sqlite-storage';
 
-const db = openDatabase({ name: 'patient_tracking.db', location: 'default' });
+// Single unified database for the app
+const db = openDatabase({ name: 'patienttracker.db', location: 'default' });
 
 export const initializeDatabase = () => {
   db.transaction(tx => {
+    // Ensure foreign keys are enforced
+    tx.executeSql('PRAGMA foreign_keys = ON;');
     // Core tables
-    tx.executeSql(`CREATE TABLE IF NOT EXISTS hospitals (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, location TEXT);`);
+    tx.executeSql(`CREATE TABLE IF NOT EXISTS hospitals (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, location TEXT, retired INTEGER DEFAULT 0);`);
     tx.executeSql(`CREATE TABLE IF NOT EXISTS floors (id INTEGER PRIMARY KEY AUTOINCREMENT, hospital_id INTEGER NOT NULL, floor_number INTEGER NOT NULL, description TEXT, FOREIGN KEY (hospital_id) REFERENCES hospitals(id));`);
     tx.executeSql(`CREATE TABLE IF NOT EXISTS physicians (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, specialty TEXT);`);
-    tx.executeSql(`CREATE TABLE IF NOT EXISTS patients (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, birthdate TEXT, medical_issue TEXT, hospital_id INTEGER, floor_id INTEGER, attending_physician_id INTEGER, notes TEXT, FOREIGN KEY (hospital_id) REFERENCES hospitals(id), FOREIGN KEY (floor_id) REFERENCES floors(id), FOREIGN KEY (attending_physician_id) REFERENCES physicians(id));`);
+    tx.executeSql(`CREATE TABLE IF NOT EXISTS patients (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, birthdate TEXT, medical_issue TEXT, hospital_id INTEGER, floor_id INTEGER, attending_physician_id INTEGER, notes TEXT, retired INTEGER DEFAULT 0, FOREIGN KEY (hospital_id) REFERENCES hospitals(id), FOREIGN KEY (floor_id) REFERENCES floors(id), FOREIGN KEY (attending_physician_id) REFERENCES physicians(id));`);
     tx.executeSql(`CREATE TABLE IF NOT EXISTS attachments (id INTEGER PRIMARY KEY AUTOINCREMENT, patient_id INTEGER NOT NULL, file_path TEXT NOT NULL, description TEXT, uploaded_at DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (patient_id) REFERENCES patients(id));`);
     tx.executeSql(`CREATE TABLE IF NOT EXISTS audit_log (id INTEGER PRIMARY KEY AUTOINCREMENT, table_name TEXT NOT NULL, operation TEXT NOT NULL, row_id INTEGER, changed_at DATETIME DEFAULT CURRENT_TIMESTAMP, changed_data TEXT);`);
 
@@ -102,7 +105,23 @@ BEGIN
   VALUES ('attachments','DELETE',OLD.id);
 END;`);
   });
+
+  // Backfill: add retired column to existing tables if missing
+  db.transaction(tx => {
+    tx.executeSql(
+      "ALTER TABLE hospitals ADD COLUMN retired INTEGER DEFAULT 0;",
+      [],
+      undefined,
+      // Ignore error if column already exists
+      () => {}
+    );
+    tx.executeSql(
+      "ALTER TABLE patients ADD COLUMN retired INTEGER DEFAULT 0;",
+      [],
+      undefined,
+      () => {}
+    );
+  });
 };
 
 export default db;
-

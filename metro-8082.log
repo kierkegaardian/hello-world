@@ -1,0 +1,1424 @@
+
+Welcome to React Native v0.80
+Starting dev server on http://localhost:8082
+
+
+                        ▒▒▓▓▓▓▒▒
+                     ▒▓▓▓▒▒░░▒▒▓▓▓▒
+                  ▒▓▓▓▓░░░▒▒▒▒░░░▓▓▓▓▒
+                 ▓▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓
+                 ▓▓░░░░░▒▓▓▓▓▓▓▒░░░░░▓▓
+                 ▓▓░░▓▓▒░░░▒▒░░░▒▓▒░░▓▓
+                 ▓▓░░▓▓▓▓▓▒▒▒▒▓▓▓▓▒░░▓▓
+                 ▓▓░░▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░▓▓
+                 ▓▓▒░░▒▒▓▓▓▓▓▓▓▓▒░░░▒▓▓
+                  ▒▓▓▓▒░░░▒▓▓▒░░░▒▓▓▓▒
+                     ▒▓▓▓▒░░░░▒▓▓▓▒
+                        ▒▒▓▓▓▓▒▒
+
+
+ WARN  the transform cache was reset.
+                Welcome to Metro v0.82.4
+              Fast - Scalable - Integrated
+
+
+ WARN  Watchman `watch-project` returned a warning: Recrawled this watch 3 times, most recently because:
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
+To clear this warning, run:
+`watchman watch-del '/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker' ; watchman watch-project '/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker'`
+
+ WARN  Watchman `query` returned a warning: Recrawled this watch 3 times, most recently because:
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
+To clear this warning, run:
+`watchman watch-del '/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker' ; watchman watch-project '/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker'`
+
+Recrawled this watch 3 times, most recently because:
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
+To clear this warning, run:
+`watchman watch-del '/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker' ; watchman watch-project '/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker'`
+
+ INFO  Dev server ready. Press Ctrl+C to exit.
+ INFO  Interactive mode is not supported in this environment
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ ERROR  Error: Unable to resolve module react-native-sqlite-storage from /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/screens/HospitalListScreen.js: react-native-sqlite-storage could not be found within the project or in these directories:
+  node_modules
+  ../node_modules
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import { View, Text, TextInput, Button, FlatList, TouchableOpacity } from 'react-native';
+> 3 | import { openDatabase } from 'react-native-sqlite-storage';
+    |                               ^
+  4 |
+  5 | const db = openDatabase({ name: 'patienttracker.db' });
+  6 |
+    at ModuleResolver.resolveDependency (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:150:15)
+    at DependencyGraph.resolveDependency (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/lib/transformHelpers.js:165:21
+    at resolveDependencies (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:42:25)
+    at visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:83:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 2)
+    at async visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+    at async Promise.all (index 2)
+    at async visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+ BUNDLE  ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)
+ BUNDLE  ./index.js 
+ INFO  Connection established to app='org.reactjs.native.example.PatientTracker' on device='iPhone 16 Pro'.
+ INFO  [1m[7m💡 JavaScript logs have moved![22m They can now be viewed in React Native DevTools. Tip: Type [1mj[22m in the terminal to open (requires Google Chrome or Microsoft Edge).[27m
+ ERROR  Error: Unable to resolve module @react-native-picker/picker from /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/AddPatientScreen.js: @react-native-picker/picker could not be found within the project or in these directories:
+  node_modules
+  ../node_modules
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import { View, TextInput, Button, Alert, Text } from 'react-native';
+> 3 | import { Picker } from '@react-native-picker/picker';
+    |                         ^
+  4 | import db from '../db';
+  5 |
+  6 | export default function AddPatientScreen({ navigation, route }) {
+    at ModuleResolver.resolveDependency (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:150:15)
+    at DependencyGraph.resolveDependency (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/lib/transformHelpers.js:165:21
+    at resolveDependencies (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:42:25)
+    at visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:83:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 3)
+    at async visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+    at async Promise.all (index 0)
+    at async visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+ ERROR  Error: Unable to resolve module @react-native-picker/picker from /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/AddPatientScreen.js: @react-native-picker/picker could not be found within the project or in these directories:
+  node_modules
+  ../node_modules
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import { View, TextInput, Button, Alert, Text } from 'react-native';
+> 3 | import { Picker } from '@react-native-picker/picker';
+    |                         ^
+  4 | import db from '../db';
+  5 |
+  6 | export default function AddPatientScreen({ navigation, route }) {
+    at ModuleResolver.resolveDependency (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:150:15)
+    at DependencyGraph.resolveDependency (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/lib/transformHelpers.js:165:21
+    at resolveDependencies (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:42:25)
+    at visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:83:30)
+    at async Promise.all (index 3)
+    at async visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+    at async Promise.all (index 0)
+    at async visit (/Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+    at async Promise.all (index 0)
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
+ ERROR  SyntaxError: /Users/geoff/Documents/Projects/Harvimed/hello-world/PatientTracker/src/screens/HospitalListScreen.js: Expecting Unicode escape sequence \uXXXX. (17:83)
+
+  15 |     db.transaction(tx => {
+  16 |       const base =
+> 17 |         'SELECT h.id, h.name, h.location, h.retired, COUNT(p.id) as patientCount '\
+     |                                                                                    ^
+  18 |         + 'FROM hospitals h LEFT JOIN patients p ON h.id = p.hospital_id ';
+  19 |       const where = [];
+  20 |       const params = [];
